@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="max-age=0, must-revalidate"/>
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="0" />
+    </head>
+    <body>
+
+    <header>
+        <!--
+       <nav>
+       <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Drawings.html">Drawings</a></li>
+       </ul>-->
+      </nav>
+       <h1>LetterCraft</h1>
+       <link rel="stylesheet" href="styles.css">
+    </header>
+       <section>
+        <nav>
+            <ul class="Instructions">
+             <li><a href="instructions.html">Instructions</a></li>
+            </ul>
+           </nav>
+        <div>
+       <p>This is a fun word game you can play</p>
+        </div>
+    <div>
+    
+
+</div>
+
+    </section>
+    
+    <div id="app">
+         <!-- <button @click="testThing">Test</button>  -->
+        <div v-if="showLettersLeft">
+       <!-- <p> You have {{ lettersLeft }} letters left</p> -->
+    </div>
+   
+      <!--  <button @click="likes++">Like this app likes: {{ likes }}</button>
+        <ul>
+            <li v-for="ratings in ratings">
+                <button>
+                <h3>{{ ratings.name }}</h3>
+            </button>
+            </li>
+        </ul>
+    -->
+    <section class="Game">
+        <!-- <button @click="return">Test</button> -->
+     <button @click="selectLetters">Play Game</button> 
+    <!-- <button @click="startGame">Play Game</button> -->
+    <button @click="removeLastLetter">Clear Word</button>
+    <!-- <button @click="myFunction">Copy</button>
+    <p>You solved the LetterCraft in {{ lettersLeft }} letters and made {{ wordsMade }} words</p> -->
+
+</section>
+<div v-if="!winner">
+    <div v-if="!loser">
+    <section class="Game">
+        <button @click="realAddVowel">Add vowel</button>
+        <button @click="addConstinent" class="Move" type="button">Add letter</button>
+      
+    </section>
+    <button  @click="fetchData">Guess</button>
+        <h2>{{ WordTogether }}</h2>
+        <h4>{{ wordIsAWord }}</h4>
+        <ul  class="CurrentLetters">
+            <li v-for="letter in lettersInGame">
+                <h3>{{ letter.name }}</h3>
+               
+        
+                <button class="keepABit" :disabled='letter.used' @click="addtoword(letter)">Add</button>
+            </li>
+        </ul>
+        
+        <!-- <ul>
+            <li v-for="letter in Word">
+                <h3>{{ letter.name }}</h3>
+
+            </li>
+        </ul> -->
+        <br>
+    </div>
+</div>
+        <div class="Message" v-if="winner">
+            You won!
+            <!-- <button @click="myFunction">Share</button>  -->
+            <button class="thingy" @click="myFunction">Share</button>
+        <p class="result"></p>
+        <p>You solved the LetterCraft in {{ lettersLeft }} letters and made {{ wordsMade }} words</p>
+        <ul id="PastWords">
+            <li v-for="word in PastWords">
+                <h3>{{ word }}</h3>
+               
+        
+                <!-- <button class="keepABit" :disabled='letter.used' @click="addtoword(letter)">Add</button> -->
+            </li>
+            </ul>
+        </div>
+        <div call="Message" v-if="loser">
+            <!-- You Lost!
+            <ul id="PastWords">
+                <li v-for="word in PastWords">
+                    <h3>{{ word }}</h3>
+                   
+            
+                    <button class="keepABit" :disabled='letter.used' @click="addtoword(letter)">Add</button> -->
+                </li>
+                </ul> 
+        <!-- </div>
+       
+      
+            <span v-show="wordIsAWord">It is a Word</span>
+            <span v-show="!wordIsAWord">It is not a word</span>
+       
+        
+        <br> -->
+        <!--
+        <div class="box" @mouseover="enter" @mouseleave="exit"> <div v-show="enteredBox">Hi</div> <div v-show="leftBox">No! Don't leave</div> </div>
+        <div class="box" @mouseleave="exit"><div v-show="leftBox">No! Don't leave</div></div>
+        <div class="box" @dblclick="doubleClick"> 
+            <div v-if="doubleClick">
+                Thanks
+             </div>
+            <div v-if="!doubleClick">
+            Double Click me!
+        </div>
+        
+        </div>
+        <div class="box" @mousemove="mouseMove">
+            
+            <div v-show="mouseMoving">
+                You are hovering your mouse over this box your mouse
+            </div>
+            
+            Position - {{ x }} {{ y }}
+        </div>
+        -->
+    </div>
+    <script src="app.js"></script>
+    <footer>
+        <h6>(c) 2024 Joshua Werfel</h6>
+    </footer>
+
+    </body>
+</html>
+
+<!--
+
+    -->
