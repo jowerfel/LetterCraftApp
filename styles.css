@@ -17,6 +17,10 @@ body {
    
    li{
     display: inline-block;
+    /* nav{ */
+    
+        display: inline-block;
+       /* } */
     margin-left: 40px;
    }
    ul{
@@ -138,3 +142,7 @@ div .Message{
 :disabled{
     background-color: red;
 }
+nav{
+    display: flex;
+   }
+   

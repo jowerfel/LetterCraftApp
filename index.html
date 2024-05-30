@@ -8,8 +8,9 @@
         <meta http-equiv="Pragma" content="no-cache"/>
         <meta http-equiv="Expires" content="0" />
     </head>
-    <body>
-
+    <div id="app" >
+     <body > 
+        
     <header>
         <!--
        <nav>
@@ -19,13 +20,14 @@
        </ul>-->
       </nav>
        <h1>LetterCraft</h1>
-       <link rel="stylesheet" href="styles.css?t=1715969779335">
+       <link rel="stylesheet" href="styles.css?t=1717028757751">
     </header>
        <section>
         <nav>
             <ul class="Instructions">
              <li><a href="instructions.html">Instructions</a></li>
             </ul>
+            
            </nav>
         <div>
        <p>This is a fun word game you can play</p>
@@ -37,11 +39,20 @@
 
     </section>
     
-    <div id="app">
+    
+<!--        
+        <div class="Options" v-if="!agreed">
+      <h5>This Game uses Cookies</h5>
+      
+      <button @click="startAskaboutCookies">I agree</button> 
+      <button @click="agreed = false">I disagree</button>
+       <button @click="test">Test</button> 
+    </div>  -->
          <!-- <button @click="testThing">Test</button>  -->
-        <div v-if="showLettersLeft">
+        <!-- <div v-if="agreed"> -->
+            <div>
        <!-- <p> You have {{ lettersLeft }} letters left</p> -->
-    </div>
+    
    
       <!--  <button @click="likes++">Like this app likes: {{ likes }}</button>
         <ul>
@@ -53,12 +64,14 @@
         </ul>
     -->
     <section class="Game">
-        <!-- <button @click="return">Test</button> -->
+         <!-- <button @click="RemovinglettersLeft = 0">Win</button>
+        <button @click="checkWinnerOrLoser">Win</button> -->
+         
+       
      <button @click="selectLetters">Play Game</button> 
-    <!-- <button @click="startGame">Play Game</button> -->
+   
     <button @click="removeLastLetter">Clear Word</button>
-    <!-- <button @click="myFunction">Copy</button>
-    <p>You solved the LetterCraft in {{ lettersLeft }} letters and made {{ wordsMade }} words</p> -->
+   
 
 </section>
 <div v-if="!winner">
@@ -91,8 +104,11 @@
 </div>
         <div class="Message" v-if="winner">
             You won!
+            <h4>Your Streak is: {{ streak }}</h4>
+            <button @click="resetStreak">Reset Streak</button> 
             <!-- <button @click="myFunction">Share</button>  -->
             <button class="thingy" @click="myFunction">Share</button>
+            
         <p class="result"></p>
         <p>You solved the LetterCraft in {{ lettersLeft }} letters and made {{ wordsMade }} words</p>
         <ul id="PastWords">
@@ -143,13 +159,34 @@
             Position - {{ x }} {{ y }}
         </div>
         -->
+        <!-- <script src="https://unpkg.com/vue-cookie-accept-decline/dist/vue-cookie-accept-decline.min.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css"
+/> -->
+
     </div>
-    <script src="app.js?t=1715969779335"></script>
+
+    <script src="app.js?t=1717028757751"></script>
+    <!-- <cookie-law>
+        <div slot-scope="props">
+          <button class="skew" @click="props.accept"><span>I accept</span></button>
+          <p>
+            This site uses 🍪
+          </p>
+          <button class="skew" @click="props.close"><span>Ignore me</span></button>
+        </div>
+      
+      </cookie-law> -->
     <footer>
         <h6>(c) 2024 Joshua Werfel</h6>
+        <h5>This Game uses Cookies</h5>
     </footer>
 
     </body>
+</div>
 </html>
 
 <!--
